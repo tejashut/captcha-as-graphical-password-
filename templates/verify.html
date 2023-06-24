@@ -1,0 +1,28 @@
+{% include "header.html" %}
+
+<div class="container Forgot shadow p-3 mb-5 bg-white rounded">
+   {% with messages=get_flashed_messages() %}
+   <div class="alert alert-danger">
+<!--<div style="color: red"> {% with messages = get_flashed_messages() %} {{ messages[0] }} {% endwith %} </div>-->
+<!--        </div>-->
+
+{{ messages[0] }}
+       </div>
+     {% endwith %}
+   <div class="row">
+      <h1>Forgot Password</h1>
+
+   </div>
+   <div class="row">
+      <form action="/verify" method="POST">
+         <div class="form-group">
+           <label for="exampleInputEmail1">Enter OTP Send To User Number</label>
+           <input class="form-control" name="otp" placeholder="Enter OTP">
+           <small id="emailHelp" class="form-text text-muted">if username exist in then code will verification code will send</small>
+         </div>
+         <button type="submit" class="btn btn-dark login_submit">Verify</button>
+      </form>
+   </div>
+</div>
+
+{% include "footer.html" %}

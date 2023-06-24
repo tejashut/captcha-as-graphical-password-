@@ -1,0 +1,45 @@
+{% include "header.html" %}
+
+<div class="container">
+  <div class="row">
+    <h2>ALL USERS</h2>
+  </div>
+  <div class="row">
+    {% if length==1%}
+    <h2>No Record Found!</h2>
+    {%else%}
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Record No</th>
+          <th scope="col">UserName</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in allUsers: %}
+        {% if user.id !=1%}
+        <tr>
+          <th scope="row">{{loop.index - 1}}</th>
+          <td>{{user.user_name}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+          <td>
+            <form action="/viewusers" method='POST'>
+              <input type="hidden" name="id" value="{{user.id}}">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form></td>
+        </tr>
+        {%endif%}
+        {% endfor %}
+      </tbody>
+    </table>
+    {%endif%}
+  </div>
+  
+</div>
+{% include "footer.html" %}

@@ -1,0 +1,37 @@
+.navbar{
+   padding: 1rem;
+}
+.navbar-brand{
+   font-size: 2rem;
+   font-weight: bold;
+}
+.navbar-nav{
+   margin-left: 23%;
+}
+.nav-item{
+   font-size: 1.2rem;
+   margin-left:2rem;
+}
+
+/* Heading of the page */
+.heading{
+   padding-left: 5rem;
+   padding-right: 15rem;
+   margin-top: 8%;
+}
+
+.heading h1{
+   font-size: 3rem;
+   font-weight: bold;
+}
+.page-banner img{
+   border-radius: 5px;
+   width: 100%;
+}
+.heading button{
+   width: 40%;
+}
+.Forgot{
+   width: 30%;
+   margin-top: 10%;
+ }
